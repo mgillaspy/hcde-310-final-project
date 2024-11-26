@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meals & More</title>
+</head>
+<body>
+    <header>
+        <h1>Search Meal By Ingredient</h1>
+    </header>
+        <main>
+            <form action="{{ url_for('results') }}" method="POST">
+
+            <!-- Ingredient Name Input -->
+            <label for="ingredient">Ingredient Name:</label>
+            <input type="text" id="ingredient" name="ingredient" placeholder="Enter an ingredient" value="{{ request.form.get('ingredient', 'apple') }}" required>
+
+
+
+            <!-- Search Button -->
+            <button type="search">Search</button>
+         </form>
+        </main>
+</body>
+</html>
