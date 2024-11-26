@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Meals & More</title>
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
     <header>
@@ -14,7 +15,6 @@
             <!-- Ingredient Name Input -->
             <label for="ingredient">Ingredient Name:</label>
             <input type="text" id="ingredient" name="ingredient" placeholder="Enter an ingredient" value="{{ request.form.get('ingredient', 'apple') }}" required>
-
 
 
             <!-- Search Button -->
