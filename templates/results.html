@@ -2,30 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Meals & More</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="static/style.css">
+
 </head>
 <body>
     <header>
-        <h1>Search Meal By Ingredient</h1>
+        <h1>Meals with "{{ ingredient }}"</h1>
     </header>
-        <main>
-             {% if results|length > 0 %}
-                 <h2> Results for "{{ ingredient }}".</h2>
-                    <ul>
-                        {% for meal in results %}
-                            <li>
-                                <!-- display meal image -->
-                                <h2><{{ ... }}</a></h2> <!-- display meal name -->
-                                <p>{...}</p> <!-- display meal instructions -->
-                                nutritional inforemation
+    <main>
+        {% if meals %}
+            <div class="meal-list">
+                {% for meal in meals %}
+                    <div class="meal-card">
+                        <h2>{{ meal.name }}</h2>
+                        <img src="{{ meal.image }}" alt="Image of {{ meal.name }}">
 
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% else %}
-            <p class = "error" > No results found for "{{ ingredient }}". Please try a different search.</p>
+                        <details>
+                            <summary>Show Meal Details</summary>
+                            <div class="instructions">
+                                <p><strong>Instructions:</strong> {{ meal.instructions }}</p>
+                            </div>
+                            <div class="area">
+                                 <p><strong>Area:</strong> {{ meal.area }}</p>
+                            </div>
+                             <div class="area">
+                                 <p><strong>Category:</strong> {{ meal.category }}</p>
+                            </div>
+
+                        </details>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No meals found for this ingredient.</p>
         {% endif %}
-        </main>
+    </main>
 </body>
 </html>
+
+
+
+
