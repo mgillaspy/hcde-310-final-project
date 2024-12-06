@@ -17,7 +17,7 @@ body {
     place-items: center; /*center grid items both horizontally and vertically within their grid cells*/
 }
 
-/* used ChatGPT to help with formatting as I was having issues with content being cut-off
+/* Used ChatGPT to help with formatting as I was having issues with content being cut-off
 /* It recommended using max width and setting the margin to 0 auto to center elements horizontally inside their parent container*/
 /* controls screen width */
 main {
