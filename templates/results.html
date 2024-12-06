@@ -15,10 +15,30 @@
         {% if meals %}
             <div class="meal-list">
                 {% for meal in meals %}
+<!--                    <div class="card" style="width: 18rem;">-->
+<!--                      <img src="{{ meal.image }}" class="card-img-top" alt="Image of {{ meal.name }}">-->
+<!--                      <div class="card-body">-->
+<!--                        <h5 class="card-title"> {{ meal.name }} </h5>-->
+<!--                          <details>-->
+<!--                            <summary>Show Meal Details</summary>-->
+<!--                            <div class="instructions">-->
+<!--                                <p><strong>Instructions:</strong> {{ meal.instructions }}</p>-->
+<!--                            </div>-->
+<!--                            <div class="area">-->
+<!--                                 <p><strong>Area:</strong> {{ meal.area }}</p>-->
+<!--                            </div>-->
+<!--                             <div class="area">-->
+<!--                                 <p><strong>Category:</strong> {{ meal.category }}</p>-->
+<!--                            </div>-->
+<!--                        </details>-->
+<!--                      </div>-->
+<!--                    </div>-->
+
+                    <!--Used ChatGPT and Bootstrap V5.1 to figure out how to make an "accordion"-->
                     <div class="meal-card">
                         <h2>{{ meal.name }}</h2>
                         <img src="{{ meal.image }}" alt="Image of {{ meal.name }}">
-
+                    <!-- YouTube Tutorial I used for creating dropdowns easily in HTML: https://www.youtube.com/watch?v=qyRcN5mL7Mk-->
                         <details>
                             <summary>Show Meal Details</summary>
                             <div class="instructions">
@@ -27,7 +47,7 @@
                             <div class="area">
                                  <p><strong>Area:</strong> {{ meal.area }}</p>
                             </div>
-                             <div class="area">
+                             <div class="category">
                                  <p><strong>Category:</strong> {{ meal.category }}</p>
                             </div>
 
