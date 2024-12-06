@@ -1,5 +1,4 @@
-/* for the header on the results page */
-
+/* for the header on the results page "meals with..." */
 header {
     text-align: center;
     margin-bottom: 30px;
@@ -11,70 +10,77 @@ header {
 /* body styling */
 body {
     font-family: Inter, sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
     background-color: #f9f9f9;
     color: #333;
     padding: 20px;
-    place-items: center;
+    place-items: center; /*center grid items both horizontally and vertically within their grid cells*/
 }
 
+/* used ChatGPT to help with formatting as I was having issues with content being cut-off
+/* It recommended using max width and setting the margin to 0 auto to center elements horizontally inside their parent container*/
 /* controls screen width */
 main {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* meal list styling (in grids) */
+/* makes a grid */
+/* Used this WebPage to figure out how to make columns and a grid for my meal cards:
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout */
 .meal-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     padding: 20px;
 }
 
-/* meal card boxes */
+/* creates the meal card boxes */
 .meal-card {
     background: white;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Used ChatGPT to figure out how to make a box shadow*/
     overflow: hidden;
     text-align: center;
     padding: 15px;
 }
 
+/*styling for the meal card heading */
 .meal-card h2 {
-    font-size: 1.5em;
+    font-size: 24px;
     margin-bottom: 10px;
-    color: #11557C;
+    color: #0a3c55; /* makes the names of each meal blue! */
 }
 
 .meal-card img {
-    width: 100%;
+    width: 100%;  /*this helps image will stretch or shrink to fit the width of its container when auto is used for height*/
     height: auto;
-    border-radius: 8px;
+    border-radius: 8px; /*rounds the corners of image*/
     margin-bottom: 15px;
 }
 
-/* for the paragraph test on the index page */
+/* Styling for the instructions, area, category text */
 .meal-card p {
-    font-size: 1em;
-    margin: 10px 0;
+    font-size: 14px;
+    margin: 10px ;
+    font-family: Inter, sans-serif;
+    color: black ;
 }
 
-/* for the input on the index page */
-.form-container {
+/* for the box around the question and input box on the index page */
+.search-container {
     background-color: #fff;
-    padding: 30px;
+    padding: 40px; /*creating space around the question and input box*/
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Again used ChatGPT to figure out how to make a box shadow*/
     width: 100%;
-    max-width: 600px;
+    max-width: 480px;
     text-align: center;
 }
 
-/* for the search on the index page */
+/* for the search button on the index page */
 button {
-     background-color: #11557C;
+    background-color: #11557C;
     color: white;
     border: none;
     border-radius: 5px;
@@ -88,7 +94,7 @@ input[type="text"] {
     font-size: 16px;
     border: 1px solid #86989B;
     border-radius: 8px;
-    width: 80%;
+    width: 80%; /*made width less so that search bar and input box were right next to each other*/
     box-sizing: border-box;
     margin-bottom: 10px;
 }
