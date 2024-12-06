@@ -1,11 +1,94 @@
-h1 {
-    font-family: 'Inter', sans-serif;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+/* for the header on the results page */
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 10px;
+    color: black;
+    border-radius: 4px;
 }
 
+/* body styling */
 body {
-    font-family: 'Inter', sans-serif;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    font-family: Inter, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    place-items: center;
+}
+
+/* controls screen width */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* meal list styling (in grids) */
+.meal-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* meal card boxes */
+.meal-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+}
+
+.meal-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #11557C;
+}
+
+.meal-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* for the paragraph test on the index page */
+.meal-card p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+/* for the input on the index page */
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* for the search on the index page */
+button {
+     background-color: #11557C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+/* for the input box on the index page */
+input[type="text"] {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid #86989B;
+    border-radius: 8px;
+    width: 80%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
