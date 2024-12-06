@@ -3,28 +3,27 @@ import requests
 
 # MealDB Functions
 
-# Search meals by ingredient (returns a JSON with the meal name, image, and id)
+# Search meals by ingredient (returns a JSON with meals and their name, image, and id)
 def search_by_ingredient(ingredient) :
     baseurl = "https://www.themealdb.com/api/json/v1/1/filter.php"
     parameter = {"i": ingredient}
     paramstr = urllib.parse.urlencode(parameter)
-    meal_ingd_request = f"{baseurl}?{paramstr}"
+    meal_ingd_request = baseurl + "?" + paramstr
 
     try:
         meal_ingd_response_str = urllib.request.urlopen(meal_ingd_request).read()
         meal_ingd_data = json.loads(meal_ingd_response_str)
-        return meal_ingd_data.get("meals", [])  # Return list of meal dictionaries or empty list
+        return meal_ingd_data.get("meals", [])  # Returns list of meal dictionaries or empty list
     except Exception as e:
         print(f"Error fetching meals for ingredient {ingredient}: {e}")
         return []
 
-
-# Get detailed recipe information by meal ID
+# Accesses more detailed recipe information by meal ID that's not given by the filter by ingredient JSON response
 def get_recipe_details(meal_id) :
     baseurl = "https://www.themealdb.com/api/json/v1/1/lookup.php"
     parameter = {"i": meal_id}
     paramstr = urllib.parse.urlencode(parameter)
-    meal_id_request = f"{baseurl}?{paramstr}"
+    meal_id_request = baseurl + "?" + paramstr
 
     try:
         meal_id_response_str = urllib.request.urlopen(meal_id_request).read()
