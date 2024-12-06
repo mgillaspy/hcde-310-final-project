@@ -17,17 +17,18 @@ def index():
 @app.route("/results", methods=["GET", "POST"])
 def results():
     if request.method == "POST":
+        # used .strip() to account for anywhitespaces that might lead to fewer results being shown
         ingredient = request.form.get("ingredient", "").strip()
 
         if not ingredient:
             error_message = "Please enter a valid ingredient."
-            return render_template("index.html", error_message=error_message)
+            return render_template("index.html", error_message = error_message)
 
         # Get meal results from MealDB
         results = search_by_ingredient_safe(ingredient)
-        if not results:
+        if not results: # if there are no meals with that ingredeint
             error_message = f"No meals found with the ingredient '{ingredient}'."
-            return render_template("index.html", error_message=error_message)
+            return render_template("index.html", error_message = error_message)
 
         # Make a list to store meal details
         full_meal_info = []
@@ -42,7 +43,7 @@ def results():
                 "image": meal["strMealThumb"],
                 "area": meal_details.get("strArea"),
                 "category": meal_details.get("strCategory"),
-                "instructions": meal_details.get("strInstructions", ""),
+                "instructions": meal_details.get("strInstructions"),
             })
 
         # Pass the data to the template
