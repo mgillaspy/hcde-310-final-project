@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-   <div class="form-container">
+   <div class="search-container">
         <h1>What Ingredient Would You Like to Cook With?</h1>
         {% if error_message %}
             <p style="color: red;"> {{ error_message }} </p>
         {% endif %}
+<!--       Used Bootstrap V5.1 for input button and input boxes and placeholder inspo-->
         <form method="POST" action="/results">
-            <input type="text" name="ingredient" id="ingredient" placeholder="Enter an ingredient..." required>
+            <input type="text" name="ingredient" placeholder="Enter an ingredient..." required>
             <button type="submit">Search</button>
         </form>
     </div>
