@@ -2,25 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Meals & More</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Meals</title>
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <header>
-        <h1>Search Meal By Ingredient</h1>
-    </header>
-        <main>
-            <form action="{{ url_for('results') }}" method="POST">
-
-            <!-- Ingredient Name Input -->
-            <label for="ingredient">Ingredient Name:</label>
-            <input type="text" id="ingredient" name="ingredient" placeholder="Enter an ingredient" value="{{ request.form.get('ingredient', 'apple') }}" required>
-
-
-
-            <!-- Search Button -->
-            <button type="search">Search</button>
-         </form>
-        </main>
+   <div class="form-container">
+        <h1>What Ingredient Would You Like to Cook With?</h1>
+        {% if error_message %}
+            <p style="color: red;"> {{ error_message }} </p>
+        {% endif %}
+        <form method="POST" action="/results">
+            <input type="text" name="ingredient" id="ingredient" placeholder="Enter an ingredient..." required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
 </body>
 </html>
+
